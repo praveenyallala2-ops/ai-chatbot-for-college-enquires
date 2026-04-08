@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SREC Nandyal – Smart Campus Portal</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="CLOADcollege_chatbot.css">
+</head>
+
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="crest">S</div>
+      <div>
+        <h1>SREC Nandyal</h1>
+        <span>santhiram Engineering College</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#">Academics</a>
+      <a href="#">Admissions</a>
+      <a href="#">Placements</a>
+      <a href="#">Research</a>
+      <a href="#">Campus</a>
+      <a href="#" class="nav-btn">Apply Now</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="hero-badge">AI-Powered Campus Assistant</div>
+      <h2>Your Questions,<br><em>Answered Instantly.</em></h2>
+      <p>Get real-time answers about admissions, fees, courses, hostel, placements and more — powered by SREC's
+        intelligent assistant available 24/7.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openChat()">💬 Chat with Assistant</button>
+        <button class="btn-secondary"
+          onclick="document.getElementById('info-sec').scrollIntoView({behavior:'smooth'})">Explore Programmes</button>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <div style="position:relative;width:280px;height:280px;">
+        <div
+          style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.12),transparent 70%);">
+        </div>
+        <div
+          style="position:absolute;inset:20px;border-radius:50%;border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;background:var(--glass);backdrop-filter:blur(16px);">
+          <div style="text-align:center;">
+            <div style="font-size:64px;line-height:1;">🎓</div>
+            <div style="font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);margin-top:10px;">SREC
+              Assistant</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Ask anything about college</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat-card"><span class="num">3000+</span>
+      <div class="lbl">Students Enrolled</div>
+    </div>
+    <div class="stat-card"><span class="num">150+</span>
+      <div class="lbl">Expert Faculty</div>
+    </div>
+    <div class="stat-card"><span class="num">95%</span>
+      <div class="lbl">Placement Rate</div>
+    </div>
+    <div class="stat-card"><span class="num">12+</span>
+      <div class="lbl">Departments</div>
+    </div>
+  </div>
+
+  <div class="info-section" id="info-sec">
+    <h2 class="section-title">Explore <span>SREC</span></h2>
+    <div class="cards-grid">
+      <div class="info-card">
+        <div class="icon">📚</div>
+        <h3>B.Tech Programmes</h3>
+        <p>CSE, ECE, EEE, ME, CE and more — AICTE approved 4-year undergraduate engineering programmes with strong
+          industry alignment.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">💰</div>
+        <h3>Fee Structure</h3>
+        <p>Transparent fee structure with scholarships available. Annual tuition starting from ₹82,000 for general
+          category students.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🏢</div>
+        <h3>Top Placements</h3>
+        <p>TCS, Infosys, Wipro, Cognizant, HCL and 50+ companies visit for campus recruitment every year.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🏨</div>
+        <h3>Hostel Facilities</h3>
+        <p>Separate hostels for boys and girls with mess, Wi-Fi, 24/7 security, and medical facilities on campus.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🔬</div>
+        <h3>Research & Labs</h3>
+        <p>State-of-the-art laboratories, R&D centres, innovation hub, and collaboration with leading industry partners.
+        </p>
+      </div>
+      <div class="info-card">
+        <div class="icon">📋</div>
+        <h3>Admission Process</h3>
+        <p>Admissions through AP EAMCET / JEE rank. Direct admissions available. Last date: July 2025.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2025 santhiram Engineering College, Nandyal, AP 518 501</div>
+    <div>📞 <a href="tel:+918514233933">+91-8514-233933</a> &nbsp;|&nbsp; ✉️ <a
+        href="mailto:info@srec.ac.in">info@srec.ac.in</a></div>
+  </footer>
+
+  <!-- CHAT TOGGLE -->
+  <button id="chat-toggle" onclick="toggleChat()" title="Open Assistant">
+    🎓<div class="badge"></div>
+  </button>
+
+  <!-- CHAT WINDOW -->
+  <div id="chat-window">
+    <div class="chat-header">
+      <div class="avatar">🤖</div>
+      <div class="info">
+        <h4>SREC Assistant</h4>
+        <span>Online · Ready to help</span>
+      </div>
+      <button class="close-btn" onclick="toggleChat()">✕</button>
+    </div>
+
+    <div class="chat-messages" id="chat-messages"></div>
+
+    <div class="quick-chips" id="quick-chips">
+      <div class="chip" onclick="sendChip(this)">📋 Admission</div>
+      <div class="chip" onclick="sendChip(this)">💰 Fees</div>
+      <div class="chip" onclick="sendChip(this)">🏢 Placements</div>
+      <div class="chip" onclick="sendChip(this)">🏨 Hostel</div>
+      <div class="chip" onclick="sendChip(this)">📞 Contact</div>
+      <div class="chip" onclick="sendChip(this)">📚 Courses</div>
+      <div class="chip" onclick="sendChip(this)">🏫 Facilities</div>
+      <div class="chip" onclick="sendChip(this)">🎓 About SREC</div>
+    </div>
+
+    <div class="chat-input-area">
+      <textarea id="chat-input" placeholder="Ask about admissions, fees, courses…"
+        onkeydown="handleKey(event)"></textarea>
+      <button class="send-btn" id="send-btn" onclick="sendMessage()">&#10148;</button>
+    </div>
+  </div>
+
+  <script src="CLOADcollege_chatbot.js"></script>
+</body>
+
+</html>
